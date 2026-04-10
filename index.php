@@ -31,7 +31,7 @@ if ($path == "/user") {
 // =========================
 if ($path == "/ping") {
     $host = $_GET['host'];
-    system("ping -n 1 " . $host); // ❌ vuln
+    system(escapeshellarg("ping -n 1 " . $host)); // ❌ vuln
 }
 
 // =========================
